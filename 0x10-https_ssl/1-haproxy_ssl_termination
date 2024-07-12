@@ -34,12 +34,13 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend web-frontend
+frontend proxynode
         bind *:80
+	mode http
 	bind *:443 ssl crt /etc/haproxy/certs/www.mwangangi.tech.pem
         redirect scheme https code 301 if !{ ssl_fc }
         default_backend web-backend
 backend web-backend
         balance roundrobin
-        server 326136-web-01 34.229.189.37 check port 80
-        server 326136-web-02 3.89.160.195 check port 80
+        server 326136-web-01 34.229.189.37:80 check
+        server 326136-web-02 3.89.160.195:80 check
