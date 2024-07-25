@@ -9,6 +9,6 @@ fi
 DATE=$(date +%d-%m-%Y)
 ARCHIVE="${DATE}.tar.gz"
 
-mysqldump -u root -p "$1" --all-databases > backup.sql
+sudo mysqldump -u root -p"$1" --all-databases --add-drop-database > backup.sql
 
 tar -cvzf "$ARCHIVE" backup.sql
