@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-import json
-import requests
 """
     exports data in the JSON format
 """
+import json
+import requests
 
 
 def get_all_employees_todo_progress():

@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-import json
-import requests
-import sys
 """
     exports data in the JSON format
 """
+import json
+import requests
+import sys
 
 
 def get_employee_todo_progress(emp_id):
