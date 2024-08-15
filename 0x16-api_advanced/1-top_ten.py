@@ -1,5 +1,10 @@
-import requests
+#!/usr/bin/python3
+"""
+documentation for this module
+"""
 from collections import Counter
+import requests
+
 
 def count_words(subreddit, word_list, hot_list=[], after=None):
     """Recursively queries the Reddit API, counts and prints sorted keyword occurrences."""
